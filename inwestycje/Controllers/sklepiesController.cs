@@ -15,9 +15,59 @@ namespace inwestycje.Controllers
         private sklepyEntities db = new sklepyEntities();
 
         // GET: sklepies
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
-            return View(db.sklepy.ToList());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.MiastoSortParm = sortOrder == "Miasto" ? "miasto_desc" : "Miasto";
+            ViewBag.NazwaGaleriiSortParm = sortOrder == "NazwaGalerii" ? "nazwagalerii_desc" : "NazwaGalerii";
+            ViewBag.MetrazSortParm = sortOrder == "Metraz" ? "metraz_desc" : "Metraz";
+            ViewBag.BrygadzistaSortParm = sortOrder == "Brygadzista" ? "brygadzista_desc" : "Brygadzista";
+            ViewBag.LokalSortParm = sortOrder == "Lokal" ? "lokal_desc" : "lokal";
+            var sklepy = from s in db.sklepy
+                           select s;
+
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    sklepy = sklepy.OrderByDescending(s => s.Lokal);
+                    break;
+                case "Lokal":
+                    sklepy = sklepy.OrderBy(s => s.Lokal);
+                    break;
+                case "lokal_desc":
+                    sklepy = sklepy.OrderByDescending(s => s.Lokal);
+                    break;
+
+                case "Miasto":
+                    sklepy = sklepy.OrderBy(s => s.Miasto);
+                    break;
+                case "miasto_desc":
+                    sklepy = sklepy.OrderByDescending(s => s.Miasto);
+                    break;
+                case "NazwaGalerii":
+                    sklepy = sklepy.OrderBy(s => s.NazwaGalerii);
+                    break;
+                case "nazwagalerii_desc":
+                    sklepy = sklepy.OrderByDescending(s => s.NazwaGalerii);
+                    break;
+                case "Metraz":
+                    sklepy = sklepy.OrderBy(s => s.Metraz);
+                    break;
+                case "metraz_desc":
+                    sklepy = sklepy.OrderByDescending(s => s.Metraz);                              
+                    break;
+                case "Brygadzista":
+                    sklepy = sklepy.OrderBy(s => s.Brygadzista);
+                    break;
+                case "brygadzista_desc":
+                    sklepy = sklepy.OrderByDescending(s => s.Brygadzista);
+                    break;
+                default:
+                    
+                    break;
+            }
+            return View(sklepy.ToList());
         }
 
         // GET: sklepies/Details/5

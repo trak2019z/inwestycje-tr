@@ -79,4 +79,3 @@ c:\users\gkar4\onedrive\dokumenty\visual studio 2015\Projects\inwestycje\inwesty
 c:\users\gkar4\onedrive\dokumenty\visual studio 2015\Projects\inwestycje\inwestycje\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 c:\users\gkar4\onedrive\dokumenty\visual studio 2015\Projects\inwestycje\inwestycje\obj\Debug\inwestycje.dll
 c:\users\gkar4\onedrive\dokumenty\visual studio 2015\Projects\inwestycje\inwestycje\obj\Debug\inwestycje.pdb
-C:\Users\gkar4\onedrive\dokumenty\visual studio 2015\Projects\inwestycje\inwestycje\obj\Debug\inwestycje.csprojResolveAssemblyReference.cache

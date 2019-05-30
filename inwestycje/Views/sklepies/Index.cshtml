@@ -11,20 +11,21 @@
 </p>
 <table class="table">
     <tr>
+        
         <th>
-            @Html.DisplayNameFor(model => model.Lokal)
+            @Html.ActionLink("Lokal", "Index", new { sortOrder = ViewBag.LokalSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Miasto)
+            @Html.ActionLink("Miasto", "Index", new { sortOrder = ViewBag.MiastoSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NazwaGalerii)
+           @Html.ActionLink("Nazwa Galerii", "Index", new { sortOrder = ViewBag.NazwaGaleriiSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Metraz)
+            @Html.ActionLink("Metraż [m2]", "Index", new { sortOrder = ViewBag.MetrazSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Brygadzista)
+           @Html.ActionLink("Brygadzista", "Index", new { sortOrder = ViewBag.BrygadzistaSortParm })
         </th>
         <th></th>
     </tr>
