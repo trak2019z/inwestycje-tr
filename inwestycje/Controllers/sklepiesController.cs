@@ -15,6 +15,7 @@ namespace inwestycje.Controllers
         private sklepyEntities db = new sklepyEntities();
 
         // GET: sklepies
+        [Authorize]
         public ActionResult Index(string sortOrder)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -22,7 +23,7 @@ namespace inwestycje.Controllers
             ViewBag.NazwaGaleriiSortParm = sortOrder == "NazwaGalerii" ? "nazwagalerii_desc" : "NazwaGalerii";
             ViewBag.MetrazSortParm = sortOrder == "Metraz" ? "metraz_desc" : "Metraz";
             ViewBag.BrygadzistaSortParm = sortOrder == "Brygadzista" ? "brygadzista_desc" : "Brygadzista";
-            ViewBag.LokalSortParm = sortOrder == "Lokal" ? "lokal_desc" : "lokal";
+            ViewBag.LokalSortParm = sortOrder == "Lokal" ? "lokal_desc" : "Lokal";
             var sklepy = from s in db.sklepy
                            select s;
 
