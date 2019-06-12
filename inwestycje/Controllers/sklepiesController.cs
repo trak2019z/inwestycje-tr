@@ -16,7 +16,7 @@ namespace inwestycje.Controllers
 
         // GET: sklepies
         [Authorize]
-        public ActionResult Index(string sortOrder)
+        public ActionResult Index(string sortOrder, string searchString)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.MiastoSortParm = sortOrder == "Miasto" ? "miasto_desc" : "Miasto";
@@ -27,8 +27,15 @@ namespace inwestycje.Controllers
             var sklepy = from s in db.sklepy
                            select s;
 
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                sklepy = sklepy.Where(s => s.Miasto.ToUpper().Contains(searchString.ToUpper())
+                                        || s.NazwaGalerii.ToUpper().Contains(searchString.ToUpper())
+                                        || s.Brygadzista.ToUpper().Contains(searchString.ToUpper())
+                                        || s.Lokal.ToUpper().Contains(searchString.ToUpper()));
 
-            switch (sortOrder)
+            }
+                switch (sortOrder)
             {
                 case "name_desc":
                     sklepy = sklepy.OrderByDescending(s => s.Lokal);
