@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using inwestycje.Models;
+using Rotativa;
+using Rotativa.MVC;
 
 namespace inwestycje.Controllers
 {
@@ -173,6 +173,20 @@ namespace inwestycje.Controllers
             return RedirectToAction("Index");
         }
 
+        // drukowanie do PDF
+
+        public ActionResult DrukujPdf()
+        {
+            var AllSklepy = db.sklepy.ToList();
+            return View(AllSklepy);
+        }
+
+        public ActionResult PrintAll()
+        {
+            var q = new ActionAsPdf("DrukujPdf");
+            return q;
+
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

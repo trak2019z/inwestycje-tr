@@ -40,6 +40,8 @@ C:\Users\gkar4\onedrive\dokumenty\visual studio 2015\Projects\inwestycje\inwesty
 C:\Users\gkar4\onedrive\dokumenty\visual studio 2015\Projects\inwestycje\inwestycje\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\gkar4\onedrive\dokumenty\visual studio 2015\Projects\inwestycje\inwestycje\bin\Newtonsoft.Json.dll
 C:\Users\gkar4\onedrive\dokumenty\visual studio 2015\Projects\inwestycje\inwestycje\bin\Owin.dll
+C:\Users\gkar4\onedrive\dokumenty\visual studio 2015\Projects\inwestycje\inwestycje\bin\Rotativa.Core.dll
+C:\Users\gkar4\onedrive\dokumenty\visual studio 2015\Projects\inwestycje\inwestycje\bin\Rotativa.MVC.dll
 C:\Users\gkar4\onedrive\dokumenty\visual studio 2015\Projects\inwestycje\inwestycje\bin\System.Web.Helpers.dll
 C:\Users\gkar4\onedrive\dokumenty\visual studio 2015\Projects\inwestycje\inwestycje\bin\System.Web.Mvc.dll
 C:\Users\gkar4\onedrive\dokumenty\visual studio 2015\Projects\inwestycje\inwestycje\bin\System.Web.Optimization.dll

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<inwestycje.Models.sklepy>
+
+@{
+    ViewBag.Title = "DrukujPdf";
+}
+
+<h2>DrukujPdf</h2>
+
+<p>
+    @Html.ActionLink("Print", "PrintAll")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Lokal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Miasto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NazwaGalerii)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Metraz)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brygadzista)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lokal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Miasto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NazwaGalerii)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Metraz)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brygadzista)
+        </td>
+
+    </tr>
+}
+
+</table>
